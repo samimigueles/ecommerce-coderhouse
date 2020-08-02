@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Salute from './components/Salute/Salute';
-import Name from './components/Name/Name';
+import Threshold from './components/Name/Threshold';
 import Aspect from './components/Name/Aspect';
 import Filter from './components/Name/Filter';
 
@@ -14,7 +14,7 @@ function App() {
         < Salute /> 
         < Aspect />
         < Filter />
-        < Name />
+        < Threshold />
         <a
           className="App-link"
           href="https://reactjs.org"

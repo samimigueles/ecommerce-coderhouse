@@ -1,7 +1,7 @@
 import React from 'react';
 import p5 from 'p5';
 
-class Aspect extends React.Component {
+class Threshold extends React.Component {
     constructor(props) {
         super(props);
         this.myRef = React.createRef();
@@ -21,7 +21,7 @@ class Aspect extends React.Component {
         p.draw = () => {
             p.background(255);
             p.image(capture, 0, 0, 550, 350);
-            p.filter(p.POSTERIZE, 5);
+            p.filter(p.THRESHOLD);
         }
     }
 
@@ -42,4 +42,4 @@ class Aspect extends React.Component {
     }
 }
 
-export default Aspect;
+export default Threshold;
