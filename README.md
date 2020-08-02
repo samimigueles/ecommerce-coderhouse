@@ -1,5 +1,5 @@
 Proyecto iniciado con el abmiente proporcionado por Create React App [https://github.com/facebook/create-react-app]
-Su desarrollo está orientado a convertirse en un e-commerce web, pero al mismo tiempo oficiará de laboratorio para desarrollar otras tecnologías web, que le permitan explotar al máximo su potencialidad. Principlamente, en enfoque estará puesto en webGL y AI.
+Su desarrollo está orientado a convertirse en un e-commerce web, pero al mismo tiempo oficiará de laboratorio para desarrollar otras tecnologías web, que le permitan explotar al máximo su potencialidad. Principlamente, el enfoque estará puesto en webGL y AI.
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
