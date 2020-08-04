@@ -1,7 +1,7 @@
 import React from 'react';
 import p5 from 'p5';
 
-class Filter extends React.Component {
+class Posterize extends React.Component {
     constructor(props) {
         super(props);
         this.myRef = React.createRef();
@@ -21,7 +21,7 @@ class Filter extends React.Component {
         p.draw = () => {
             p.background(255);
             p.image(capture, 0, 0, 550, 350);
-            p.filter(p.INVERT);
+            p.filter(p.POSTERIZE, 5);
         }
     }
 
@@ -42,4 +42,4 @@ class Filter extends React.Component {
     }
 }
 
-export default Filter;
+export default Posterize;

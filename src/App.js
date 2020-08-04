@@ -1,28 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootswatch/dist/sketchy/bootstrap.min.css';
 import './App.css';
 import Salute from './components/Salute/Salute';
-import Threshold from './components/Name/Threshold';
-import Aspect from './components/Name/Aspect';
-import Filter from './components/Name/Filter';
+import Threshold from './components/Videos/Threshold';
+import Invert from './components/Videos/Invert';
+import Navbar from './components/Navbar';
+import Posterize from './components/Videos/Posterize';
 
 function App() {
   return (
     <div className="App">
+      < Navbar />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        < Salute /> 
-        < Aspect />
-        < Filter />
+        < Salute />
+        < Posterize />
+        < Invert />
         < Threshold />
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
