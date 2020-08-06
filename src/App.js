@@ -1,16 +1,16 @@
 import React from 'react';
-import 'bootswatch/dist/sketchy/bootstrap.min.css';
+import 'bootswatch/dist/minty/bootstrap.min.css';
 import './App.css';
-import Salute from './components/Salute/Salute';
-import Threshold from './components/Videos/Threshold';
-import Invert from './components/Videos/Invert';
-import Navbar from './components/Navbar';
-import Posterize from './components/Videos/Posterize';
+import Salute from './components/salute/Salute';
+import Threshold from './components/videos/Threshold';
+import Invert from './components/videos/Invert';
+import NavBar from './components/navbar/NavBar';
+import Posterize from './components/videos/Posterize';
 
 function App() {
   return (
     <div className="App">
-      < Navbar />
+      < NavBar />
       <header className="App-header">
         < Salute />
         < Posterize />
