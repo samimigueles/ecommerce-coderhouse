@@ -6,6 +6,7 @@ import Threshold from './components/videos/Threshold';
 import Invert from './components/videos/Invert';
 import NavBar from './components/navbar/NavBar';
 import Posterize from './components/videos/Posterize';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
       < NavBar />
       <header className="App-header">
         < Salute />
-        < Posterize />
+        {/* < Posterize /> */}
         < Invert />
-        < Threshold />
+        {/* < Threshold /> */}
         {/* <a
           className="App-link"
           href="https://reactjs.org"
@@ -25,6 +26,7 @@ function App() {
           Learn React
         </a> */}
       </header>
+      < Footer />
     </div>
   );
 }
