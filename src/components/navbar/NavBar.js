@@ -8,9 +8,6 @@ function NavBar() {
             <a className="navbar- ml-5" href="#">
                 < Dice />
             </a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
 
             <div className="collapse navbar-collapse" id="navbarColor03">
                 <ul className="navbar-nav m-auto">
@@ -24,12 +21,11 @@ function NavBar() {
                         <a className="nav-link ml-5" href="#">About Us <i className="fas fa-address-book"></i></a>
                     </li>
                 </ul>
+                
                 <a className="navbar- ml-5" href="#">
                     < CartIcon />
                 </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                
             </div>
         </nav>
     )
