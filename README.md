@@ -1,6 +1,5 @@
-Proyecto iniciado con el abmiente proporcionado por Create React App [https://github.com/facebook/create-react-app]
-Su desarrollo está orientado a convertirse en un e-commerce web, pero al mismo tiempo oficiará de laboratorio para desarrollar otras tecnologías web, que le permitan explotar al máximo su potencialidad. Principlamente, el enfoque estará puesto en webGL y AI.
-
+Proyecto iniciado con el ambiente proporcionado por Create React App [https://github.com/facebook/create-react-app]
+Su desarrollo está orientado a convertirse en un e-commerce web, llevado adelante durante el curso de CoderHouse https://www.coderhouse.com/online/reactjs
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
