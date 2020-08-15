@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <div>< Home /></div>
       <header className="App-header">
-        < ItemCount />
       </header>
       < Footer />
     </div>
