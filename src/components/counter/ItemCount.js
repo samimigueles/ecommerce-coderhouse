@@ -17,8 +17,8 @@ function ItemCount({ init, max, min, onAdd }) {
      } */
 
     return <>
-        <div>
-            <div style={{ display: 'flex', borderStyle: 'solid', borderColor: 'brown', padding: 6, textAlign:"center" }}>
+        <div style={{alignSelf: 'center'}}>
+            <div style={{ display: 'flex', borderStyle: 'solid', borderColor: 'brown', padding: 6, alignItems: 'center', alignContent: 'center', textAlign: 'center', alignSelf: 'center' }}>
                 <button type='button' disabled={item < min ? true : false} onClick={subtractItem} style={{ margin: 25 }}><i class="fas fa-minus"></i></button>
 
                 <p style={{ color: 'brown' }}> {item} </p>
