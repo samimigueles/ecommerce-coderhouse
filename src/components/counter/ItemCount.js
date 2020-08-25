@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 
 function ItemCount({ init, max, min, onAdd }) {
     const [item, setItem] = useState(init);
@@ -19,7 +19,7 @@ function ItemCount({ init, max, min, onAdd }) {
     return <>
         <div style={{alignSelf: 'center'}}>
             <div style={{ display: 'flex', borderStyle: 'solid', borderColor: 'brown', padding: 6, alignItems: 'center', alignContent: 'center', textAlign: 'center', alignSelf: 'center' }}>
-                <button type='button' disabled={item < min ? true : false} onClick={subtractItem} style={{ margin: 25 }}><i className="fas fa-minus"></i></button>
+                <button type='button' disabled={item <= min ? true : false} onClick={subtractItem} style={{ margin: 25 }}><i className="fas fa-minus"></i></button>
 
                 <p style={{ color: 'brown' }}> {item} </p>
 
