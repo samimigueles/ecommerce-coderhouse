@@ -8,7 +8,7 @@ function Dice() {
     }
 
     return (
-        <img src={dice} alt="logo" style={{ width: 35}} onClick={greetings} />
+        <img src={dice} alt="logo" style={{ width: 35 }} onClick={greetings} />
 
     )
 }

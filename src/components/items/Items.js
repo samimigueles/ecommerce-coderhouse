@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import ItemList from "./ItemList";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
-function Items() {
+const Items = ({ item: { id, name, price, description, view } }) => {
+    return (<div className='col-md-4 fadein'>
+        <div className='card mb-4 shadow-sm' style={{border:'solid black'}}>
+            <Link to={`/item/${id}`}> <img src={view} style={{ width:250, border:'dashed brown'}}></img>
+            </Link>
+            <div className='card-body'>
+                <p className='card-text'> {name} - price: ${price} -{description}</p>
+                <div className='d-flex justify-content-between align-items-center'>
 
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
+                </div>
+            </div>
+        </div>
+    </div>
 
-    useEffect(() => {
-        ItemList().then(res => {
-            setItems(res);
-            setLoading(false);
-        });
-    }, []);
-
-    return <>
-        {loading && <p>Loading...</p>}
-        <ul style={{display:'grid'}}>
-            {items.map((p) => <li key={p.id}><img src={p.view} alt="product" style={{width:200, border:'solid black'}}></img>{`Detail: ${p.name}, stock:${p.stock}`}</li>)}
-        </ul>
-    </>;
+    )
 
 }
 

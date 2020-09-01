@@ -3,7 +3,7 @@ import cartplus from '../assets/cartplus.svg';
 
 const CartIcon = () => {
 
-    const shop = () => {
+    const shop = () =>{
         alert('Thanks for shopping!')
     }
 
