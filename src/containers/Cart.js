@@ -1,15 +1,18 @@
-import React from 'react'
-import cartplus from '../assets/cartplus.svg';
+import React from "react";
+import cartplus from "../assets/cartplus.svg";
+import { useCartContext } from "../context/CartContext";
 
-const CartIcon = () => {
+const CartIcon = ({items}) => {
+  
 
-    const shop = () =>{
-        alert('Thanks for shopping!')
-    }
+  
 
-    return (
-        <img src={cartplus} alt="logo" style={{ width: 150 }} onClick={shop} />
-    )
-}
+  return (
+    <>
+      {/* <img src={cartplus} alt="logo" style={{ width: 150 }} onClick={shop} /> */}
+      <h1> hola</h1>
+    </>
+  );
+};
 
 export default CartIcon;

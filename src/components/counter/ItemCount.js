@@ -1,54 +1,65 @@
-import React, { useState } from "react";
+import React from "react";
 import useCounter from "../../hooks/useCounter";
 
-function ItemCount({ init, max, min, onAdd }) {
-    const [item, addItem, subtractItem] = useCounter(init)
+const OnInput = ({ addItem, subtractItem, min, max, onCountChange, count }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        borderStyle: "solid",
+        borderColor: "brown",
+        padding: 6,
+        alignItems: "center",
+        alignContent: "center",
+        textAlign: "center",
+        alignSelf: "center",
+      }}
+    >
+      <button
+        type="button"
+        disabled={count <= min ? true : false}
+        onClick={subtractItem}
+        style={{ margin: 25 }}
+      >
+        <i className="fas fa-minus"></i>
+      </button>
 
+      <input
+        style={{ color: "brown", width: 50, textAlign: "center" }}
+        type='number'
+        value={count}
+        onChange={(e) => onCountChange(e)}
+      />
+
+      <button
+        type="button"
+        disabled={count === max ? true : false}
+        onClick={addItem}
+        style={{ margin: 25 }}
+      >
+        <i className="fas fa-plus"></i>
+      </button>
+    </div>
+  );
+};
+
+function ItemCount({ count, setCount, max, min, onAdd, onCountChange }) {
+  /*  const [item, addItem, subtractItem] = useCounter(init); */
 
   return (
     <>
-      <div style={{ alignSelf: "center" }}>
-        <div
-          style={{
-            display: "flex",
-            borderStyle: "solid",
-            borderColor: "brown",
-            padding: 6,
-            alignItems: "center",
-            alignContent: "center",
-            textAlign: "center",
-            alignSelf: "center",
-          }}
-        >
-          <button
-            type="button"
-            disabled={item <= min ? true : false}
-            onClick={subtractItem}
-            style={{ margin: 25 }}
-          >
-            <i className="fas fa-minus"></i>
-          </button>
-
-          <p style={{ color: "brown" }}> {item} </p>
-
-          <button
-            type="button"
-            disabled={item === max ? true : false}
-            onClick={addItem}
-            style={{ margin: 25 }}
-          >
-            <i className="fas fa-plus"></i>
-          </button>
-        </div>
-        <button
-          type="button"
-          onClick={onAdd}
-          disabled={item === 0 ? true : false}
-          style={{ width: 200, borderColor: "brown", marginTop: 10 }}
-        >
-          Add {item} products{" "}
-        </button>
-      </div>
+      <OnInput
+        addItem={() => {
+          setCount(count + 1);
+        }}
+        count={count}
+        subtractItem={() => {
+          setCount(count - 1);
+        }}
+        min={min}
+        max={max}
+        onCountChange={onCountChange}
+      />
     </>
   );
 }
