@@ -1,56 +1,41 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../components/items/ItemList";
 import { getFirestore } from "../firebase/index";
+import { useParams } from "react-router-dom";
 
-const getItem = () => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res([
-        {
-          id: 1,
-          name: "transistor",
-          price: 50,
-          description: "Electronic component",
-          view:
-            "https://cdmxelectronica.com/wp-content/uploads/AR0258-Transistor-BC547B.jpg",
-        },
-        {
-          id: 2,
-          name: "potentiometer",
-          price: 65,
-          description: "Electronic component",
-          view:
-            "https://upload.wikimedia.org/wikipedia/commons/b/b5/Potentiometer.jpg",
-        },
-        {
-          id: 3,
-          name: "resistor",
-          price: 45,
-          description: "Electronic component",
-          view:
-            "https://www.diyelectronics.co.za/store/10512-thickbox_default/resistor-220-ohm-14w-5.jpg",
-        },
-      ]);
-    }, 2000);
-  });
-};
 
 function Home() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { categoryId = undefined} = useParams();
 
   useEffect(() => {
-    /* const db = getFirestore();
-    const itemCollection = db.collection("items");
-    const higherPrice = itemCollection.where('price', '>', '45')
+    const db = getFirestore();
+    let collection = db.collection("items");
 
-    itemCollection.get().then */
+    let query = categoryId ? collection.where("categoryId", "==", categoryId) : collection
+
+
     
-    getItem().then(res => {
-            setLoading(false);
-            setItems(res);
-        })
-  });
+
+    query
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.size === 0) {
+          console.log("No results!");
+        }
+        debugger;
+        setItems(querySnapshot.docs.map(doc =>({...doc.data(), id: doc.id})));
+        console.log(items);
+      })
+      .catch((error) => {
+        console.log("Error searching item: ", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+
+  }, [categoryId]);
 
   return (
     <div

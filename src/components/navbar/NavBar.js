@@ -1,13 +1,12 @@
 import React from "react";
 import Dice from "./Dice";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import cartplus from "../assets/cartplus.svg";
 import { useCartContext } from "../../context/CartContext";
 
-function NavBar() {
-
-  const {count} = useCartContext()
+function NavBar({ categories }) {
+  const { count } = useCartContext();
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
@@ -34,22 +33,39 @@ function NavBar() {
               <span className="sr-only">(current)</span>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link ml-5" to="/catalogue">
-              Catalogue <i className="fas fa-tags"></i>
-              <span className="sr-only">(current)</span>
-            </Link>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle ml-5"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="true"
+              href="#"
+            >
+              Categories <i className="fas fa-tags"></i>
+            </a>
+            <div className="dropdown-menu ml-5">
+              {categories.map((c) => (
+                <li>
+                  <NavLink to={`/categories/${c.id}`}>{c.name}</NavLink>
+                </li>
+              ))}
+            </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link ml-5" href="#">
+            <Link className="nav-link ml-5" to="/about">
               About Us <i className="fas fa-address-book"></i>
-            </a>
+            </Link>
           </li>
         </ul>
 
         <Link className="navbar- ml-5" to="/cart">
           <img src={cartplus} alt="logo" style={{ width: 35 }}></img>
-          <input type='number' style={{width:35, textAlign:'center'}} value={count} />
+          <input
+            type="number"
+            style={{ width: 35, textAlign: "center" }}
+            value={count}
+          />
           <span className="sr-only">(current)</span>
         </Link>
       </div>

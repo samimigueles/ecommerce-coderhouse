@@ -13,6 +13,7 @@ const OnInput = ({ addItem, subtractItem, min, max, onCountChange, count }) => {
         alignContent: "center",
         textAlign: "center",
         alignSelf: "center",
+        justifyContent:'center'
       }}
     >
       <button

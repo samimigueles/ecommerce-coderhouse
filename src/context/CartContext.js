@@ -29,8 +29,13 @@ export function CartProvider({ value = [], children }) {
     setCount(count + amount);
   }
 
+  function clean(){
+    setItems([]);
+    setCount(0)
+  }
+
   return (
-    <CartContext.Provider value={{ items, count, addItem }}>
+    <CartContext.Provider value={{ items, count, addItem, clean }}>
       {children}
     </CartContext.Provider>
   );
