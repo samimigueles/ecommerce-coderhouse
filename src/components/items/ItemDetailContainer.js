@@ -54,7 +54,7 @@ const ItemDetailContainer = () => {
               <div style={{ alignItems: "center", justifyContent: "center" }}>
                 <ItemDetail item={items} />
                 <ItemCount
-                  min={3}
+                  min={0}
                   max={45}
                   count={count}
                   setCount={setCount}
