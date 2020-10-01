@@ -1,5 +1,4 @@
 import React from "react";
-import useCounter from "../../hooks/useCounter";
 
 const OnInput = ({ addItem, subtractItem, min, max, onCountChange, count }) => {
   return (
@@ -13,10 +12,11 @@ const OnInput = ({ addItem, subtractItem, min, max, onCountChange, count }) => {
         alignContent: "center",
         textAlign: "center",
         alignSelf: "center",
-        justifyContent:'center'
+        justifyContent: "center",
       }}
     >
       <button
+        className="btn btn-primary"
         type="button"
         disabled={count <= min ? true : false}
         onClick={subtractItem}
@@ -27,12 +27,13 @@ const OnInput = ({ addItem, subtractItem, min, max, onCountChange, count }) => {
 
       <input
         style={{ color: "brown", width: 50, textAlign: "center" }}
-        type='number'
+        type="number"
         value={count}
         onChange={(e) => onCountChange(e)}
       />
 
       <button
+        className="btn btn-primary"
         type="button"
         disabled={count === max ? true : false}
         onClick={addItem}
@@ -45,7 +46,6 @@ const OnInput = ({ addItem, subtractItem, min, max, onCountChange, count }) => {
 };
 
 function ItemCount({ count, setCount, max, min, onAdd, onCountChange }) {
-  /*  const [item, addItem, subtractItem] = useCounter(init); */
 
   return (
     <>

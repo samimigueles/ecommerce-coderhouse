@@ -45,8 +45,8 @@ function NavBar({ categories }) {
               Categories <i className="fas fa-tags"></i>
             </a>
             <div className="dropdown-menu ml-5">
-              {categories.map((c) => (
-                <li>
+              {categories.map((c, index) => (
+                <li key={index}>
                   <NavLink to={`/categories/${c.id}`}>{c.name}</NavLink>
                 </li>
               ))}

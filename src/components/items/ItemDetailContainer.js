@@ -62,6 +62,7 @@ const ItemDetailContainer = () => {
                   onAdd={onAdd}
                 />
                 <button
+                  className="btn btn-primary"
                   type="button"
                   onClick={() => addItem(items, count)}
                   disabled={count === 0 ? true : false}
@@ -71,7 +72,6 @@ const ItemDetailContainer = () => {
                 </button>
               </div>
             )}
-            
           </>
         )}
       </CartContext.Consumer>

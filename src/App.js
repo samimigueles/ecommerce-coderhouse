@@ -11,6 +11,7 @@ import NavBar from './components/navbar/NavBar';
 import ItemDetailContainer from './components/items/ItemDetailContainer';
 import CartIcon from './components/navbar/CartIcon';
 import {CartProvider} from './context/CartContext'
+import About from './containers/About';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <header className="App-header">
           <Route path="/" exact component={Home} />
           <Route path="/categories/:categoryId" exact component={Home} />
+          <Route path="/about" exact component={About} />
           <Route path="/cart" exact component={CartIcon} />
           <Route path="/item/:id/:name" exact component={ItemDetailContainer} />
 
