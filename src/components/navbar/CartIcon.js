@@ -7,30 +7,6 @@ import * as firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../../firebase/index";
 
-/* async function CreateOrder() {
-  const db = getFirestore();
-  const orders = db.collection("orders");
-
-  const newOrder = {
-    buyer: "userInfo",
-    items: [{ id: 2 }, { id: 3 }],
-    date: firebase.firestore.FieldValue.serverTimestamp(),
-    total: 200,
-  };
-
-   orders.add(newOrder).then(({ id }) => {
-     console.log(id)
-   }) 
-
-  try {
-    const { id } = await orders.add(newOrder);
-    console.log(id);
-  } catch (err) {
-    // seteamos feedback para el user
-    console.log("Error");
-  }
-*/
-
 const CartIcon = () => {
   const { items, clean } = useCartContext();
   let suma = 0;
