@@ -10,5 +10,5 @@ ROLLTECH - PROYECTO INTEGRADOR DE CODERHOUSE
 
 Su fin corresponde a poder realizar maquetación en la página.
 
-
+![alt text](https://github.com/santimigueles/ecommerce-coderhouse/blob/master/final.gif)
 
