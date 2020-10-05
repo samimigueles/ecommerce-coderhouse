@@ -30,7 +30,6 @@ const ItemDetailContainer = () => {
     item
       .get()
       .then((doc) => {
-        debugger;
         console.log("Item found");
         setItems({ id: doc.id, ...doc.data() });
         console.log(items);

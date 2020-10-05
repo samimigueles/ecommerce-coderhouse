@@ -24,7 +24,6 @@ function Home() {
         if (querySnapshot.size === 0) {
           console.log("No results!");
         }
-        debugger;
         setItems(querySnapshot.docs.map(doc =>({...doc.data(), id: doc.id})));
         console.log(items);
       })
